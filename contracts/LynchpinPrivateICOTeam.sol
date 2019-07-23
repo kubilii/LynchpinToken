@@ -184,7 +184,7 @@ contract LynchpinPrivateICO is Ownable(0xAc983022185b95eF2B2C7219143483BD0C65Ecd
         require(!crowdsaleClosed);
         require(isWhitelisted[msg.sender]);
 
-        uint256 amountToSend = msg.value * tokeninOneEther;
+        uint256 amountToSend = msg.value.mul(tokeninOneEther);
 
         require (tokenSold.add(amountToSend) <= maxTokensToSell);
 

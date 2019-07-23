@@ -196,6 +196,7 @@ contract LynchpinPrivateICO is Ownable(0xAc983022185b95eF2B2C7219143483BD0C65Ecd
      
     function giveTokens(address _receiver, uint _tokens) public onlyOwner
     {
+        require(_receiver != address(0));
         require(tokenSold.add(_tokens) <= maxTokensToSell);
 
         tokensOwed[_receiver] += _tokens;
